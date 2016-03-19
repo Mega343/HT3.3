@@ -6,5 +6,10 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class Guitar extends MusicalEquipment {
+    @Override
+    public String getType() {
+        return "guitar";
+    }
+
 
 }
