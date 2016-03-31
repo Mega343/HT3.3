@@ -20,9 +20,8 @@ public class MusicShop {
    }
 
     public MusicShop(ArrayList<MusicalEquipment> list) {
-        if (!list.isEmpty())
-        {}
-        else try {
+        if (list.isEmpty())
+        try {
             throw new ShopIsEmptyException();
         } catch (ShopIsEmptyException e) {
             System.out.println("Warehouse is empty!");
