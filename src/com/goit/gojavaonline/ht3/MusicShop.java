@@ -21,7 +21,7 @@ public class MusicShop {
 
     public MusicShop(ArrayList<MusicalEquipment> list) {
         if (!list.isEmpty())
-            list.addAll(list);
+        {}
         else try {
             throw new ShopIsEmptyException();
         } catch (ShopIsEmptyException e) {
@@ -59,21 +59,23 @@ public class MusicShop {
         return result;
     }
 
-    public static void removeEquipmentFromTheShop(MusicShop musicShop, Map<String, Integer> order) {
-        for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
-            String musicEquipmentType = orderEntry.getKey();
-            Integer orderValue = orderEntry.getValue();
-            int numberOfMusicEquipmentToRemove = 0;
-            Iterator<MusicalEquipment> iterator = musicShop.getList().iterator();
-            while (iterator.hasNext()) {
-                MusicalEquipment musicalEquipment = iterator.next();
-                if (musicalEquipment.getType().equals(musicEquipmentType) &&
-                        numberOfMusicEquipmentToRemove < orderValue) {
-                    iterator.remove();
-                    numberOfMusicEquipmentToRemove++;
-                }
-            }
-        }
+    public static void removeEquipmentFromTheShop(MusicShop musicShop, ArrayList<MusicalEquipment> result) {
+//        for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
+//            String musicEquipmentType = orderEntry.getKey();
+//            Integer orderValue = orderEntry.getValue();
+//            int numberOfMusicEquipmentToRemove = 0;
+//            Iterator<MusicalEquipment> iterator = musicShop.getList().iterator();
+//            while (iterator.hasNext()) {
+//                MusicalEquipment musicalEquipment = iterator.next();
+//                if (musicalEquipment.getType().equals(musicEquipmentType) &&
+//                        numberOfMusicEquipmentToRemove < orderValue) {
+//                    iterator.remove();
+//                    numberOfMusicEquipmentToRemove++;
+//                }
+//            }
+//        }
+//
+        musicShop.getList().removeAll(result);
 
     }
 }
