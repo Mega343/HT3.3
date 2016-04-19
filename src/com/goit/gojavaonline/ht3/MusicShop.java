@@ -73,7 +73,7 @@ public class MusicShop {
 //                }
 //            }
 //        }
-//
+//           
         musicShop.getList().removeAll(result);
 
     }
